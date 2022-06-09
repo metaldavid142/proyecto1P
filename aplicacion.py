@@ -12,6 +12,21 @@ def principal():
 def drones():
     return render_template('/drones.html')
 
+#Ruta de página dron1
+@app.route('/dron1')
+def dron1():
+    return render_template('/dron1.html')
+
+#Ruta de página dron2
+@app.route('/dron2')
+def dron2():
+    return render_template('/dron2.html')
+
+#Ruta de página dron3
+@app.route('/dron3')
+def dron3():
+    return render_template('/dron3.html')
+
 #Ruta de página 2
 @app.route('/aeromodelismo')
 def aeromodelismo():
