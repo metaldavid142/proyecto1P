@@ -220,28 +220,61 @@
         <!--Forms-->
         <div class="formulario">
             <h3>Para obtener noticias semanales:</h3>
-            <form action="/">
+            <form method="post" action="{{url_for('enviar')}}">
                 <div class="form-group">
                     <label for="uname">Nombre y Apellido:</label>
-                    <input type="text" class="form-control" id="uname" placeholder="Ingrese su Nombre y Apellido" name="uname" required>
+                    <input type="text" class="form-control" id="uname" placeholder="Ingrese su Nombre y Apellido" name="nombres" required>
                 </div>
                 <div class="form-group">
                     <label for="number">Celular:</label>
-                    <input type="text" class="form-control" id="number" placeholder="0987650231" name="number" required>
+                    <input type="text" class="form-control" id="number" placeholder="0987650231" name="celular" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="ejemplo@mail.com" name="email">
+                    <input type="email" class="form-control" id="email" placeholder="ejemplo@mail.com" name="correo_electronico">
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <div class="form-group">
+                    <label for="uname">Comentario:</label>
+                    <input type="text" class="form-control" id="uname" placeholder="Su opinión es importante" name="comentario" required>
+                </div>
+                <input type="submit" class="btn btn-outline-success">
             </form>
         </div>
         <!--Fin Forms-->
 
         <!--datos_formulario-->
         <div class="datos_formulario">
-            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Comentarios</th>
+
+                    </tr>
+                </thead>
+                <br>
+                <tbody>
+                    <!--Ciclo for para acceder a la lista de tareas-->
+                    {% for datosFormulario in datos_formulario %}
+                    <tr>
+                        <!--Mostrar la descripcion de la tarea-->
+                        <th>{{datosFormulario.comentario}}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
+
+        <!--Mensaje de tarea agregada exitosamente-->
+        {% for message in get_flashed_messages() %}
+            <h6 class="text-center text-warning">{{ message }}</h6>
+        {% endfor %}
+        <br>
+
+        <!--Botón para borrar los datos ya registrados-->
+        <form action="{{url_for('borrar')}}" method="post" class="card-body">
+            <button type="submit" class="btn btn-outline-warning">Borrar</button>
+        </form>
+        <br>
         <!--Fin datos_formulario-->
 
     </div>

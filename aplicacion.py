@@ -47,20 +47,21 @@ def aeromodelismo():
 @app.route('/enviar', methods=['POST'])
 def enviar():
     if request.method == 'POST':
-        
+
         #Campos a llenar
-        nombres = request.form['nombres']
+        nombres = request.form['nombres'] 
         celular = request.form['celular']
         correo_electronico = request.form['correo_electronico']
+        comentario = request.form['comentario']
 
         #Validación para que los campos no sean nulos
-        if nombres == '' or correo_electronico == '':
+        if nombres == '' or correo_electronico == '' or celular == '':
             flash('LLenar todos los campos')
             return redirect(url_for('principal'))
         
         else:
-            flash('¡Tarea agregada exitosamente!')
-            datos_formulario.append({'nombres': nombres, 'celular': celular, 'correo_electronico': correo_electronico})
+            flash('¡Nuevo comentario!')
+            datos_formulario.append({'comentario': comentario})
             return redirect(url_for('principal'))
 
 #Controlador: Limpiar formulario
@@ -75,7 +76,7 @@ def borrar():
 
         else:
             datos_formulario.clear()
-            flash('Formulario borrado')
+            flash('Comentario borrado')
             return redirect(url_for('principal'))
 
 #Método para correr la aplicación
