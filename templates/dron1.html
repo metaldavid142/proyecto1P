@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Drones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap para varias versiones-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--Estilos para definir las 3 columnas y 6 filas que contendra la plantilla en general-->
+    <style>
+        .contenedor {
+            gap: 25px;
+            margin: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(200px, 400px));
+            grid-template-rows: repeat(6, auto);
+            place-content: center;
+        }
+
+        .navbar {
+            border-radius: 10px;
+            place-self: center;
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        .carousel {
+            place-self: center;
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        /* Imagen full responsive */
+        .carousel.carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cards {
+            place-self: center;	
+            width: auto;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .blockquote {
+            place-self: center;
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        
+        .contacto {
+            place-self: center;	
+            width: auto;
+            height: auto;
+        }
+
+        .formulario {
+            border-radius: 10px;
+            background-color: #eceaea;
+            padding: 10px;
+            place-self: center;
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Contenedor general-->
+    <div class="contenedor">
+        
+        <!--Navbar, con logo y enlaces a dos páginas-->
+        <div class="navbar">
+            <!--Navegador con logo de la organización, links de páginas y espacio de búsqueda-->
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <a class="navbar-brand" href="/">
+                    <img src="https://hobbyecuador.com/wp-content/uploads/2022/01/Logo-Hobby-Store-color.png" alt="logo" style="width:100px;">
+                </a>
+                <!-- Links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/drones">Drones</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/aeromodelismo">Aeromodelismo</a>
+                    </li>
+                </ul>
+                <form class="form-inline" action="/">
+                  <input class="form-control mr-sm-2" type="text" placeholder="....">
+                  <button class="btn btn-success" type="submit">Buscar</button>
+                </form>
+            </nav>
+        </div>
+        <!--Fin Navbar-->
+
+        <!--Carrusel-->
+        <div class="carousel">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://img.directindustry.es/images_di/photo-mg/236799-16621777.webp" alt="dron1" width="500" height="400"> 
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://img.directindustry.es/images_di/photo-mg/236799-16621779.webp" alt="dron2" width="500" height="400">    
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://img.directindustry.es/images_di/photo-mg/236799-16621780.webp" alt="dron3" width="500" height="400">   
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://img.directindustry.es/images_di/photo-mg/236799-16621782.webp" alt="dron4" width="500" height="400">   
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+        </div>
+        <!--Fin Carrusel-->
+
+        <!--Cards-->
+        <div class="cards">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="https://img.directindustry.es/images_di/photo-mg/236799-16621777.webp" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">Dron para aplicaciones industriales</h4>
+                  <p class="card-text">Dron cuadrirrotor</p>
+                  <button type="button" class="btn btn-primary">Más detalles</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="https://www.hispadrones.com/wp-content/uploads/2020/01/beneficios-drones-inspecciones-industria-hispadrones.jpg" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">Arturo Salazar</h4>
+                  <p class="card-text">Aplicación de drones en la industria.</p>
+                  <button type="button" class="btn btn-primary">Ver perfil</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="https://www.futurhobby.com/magazine/imag4/DaniPacha3D01.jpg" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">Andrés Cortazar</h4>
+                  <p class="card-text">En la escuela de aeromodelismo.</p>
+                  <button type="button" class="btn btn-primary">Mas información</button>
+                </div>
+            </div>
+        </div>
+        <!--Fin Nav-->
+
+        <!--Forms-->
+        <div class="formulario">
+            <h3>Para obtener noticias semanales:</h3>
+            <form action="/">
+                <div class="form-group">
+                    <label for="uname">Nombre y Apellido:</label>
+                    <input type="text" class="form-control" id="uname" placeholder="Ingrese su Nombre y Apellido" name="uname" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="ejemplo@mail.com" name="email">
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+        <!--Fin Forms-->
+
+    </div>
+</body>
+</html>
