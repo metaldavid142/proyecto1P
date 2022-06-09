@@ -18,7 +18,7 @@
             margin: 20px;
             display: grid;
             grid-template-columns: repeat(3, minmax(200px, 400px));
-            grid-template-rows: repeat(5, auto);
+            grid-template-rows: repeat(6, auto);
             place-content: center;
         }
 
@@ -68,6 +68,14 @@
             grid-column-start: 2;
             grid-column-end: 4;
         }
+
+        .datos_formulario {
+            place-self: center;
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+
     </style>
 
 </head>
@@ -188,7 +196,7 @@
                     Quito, Av. Amazonas y Ramón Roca
                     <cite title="Source Title">Inscripciones abiertas</cite>
                 </footer>
-        </blockquote>
+            </blockquote>
         </div>
         <!--Fin Blockquote-->
 
@@ -218,6 +226,10 @@
                     <input type="text" class="form-control" id="uname" placeholder="Ingrese su Nombre y Apellido" name="uname" required>
                 </div>
                 <div class="form-group">
+                    <label for="number">Celular:</label>
+                    <input type="text" class="form-control" id="number" placeholder="0987650231" name="number" required>
+                </div>
+                <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" id="email" placeholder="ejemplo@mail.com" name="email">
                 </div>
@@ -225,6 +237,12 @@
             </form>
         </div>
         <!--Fin Forms-->
+
+        <!--datos_formulario-->
+        <div class="datos_formulario">
+            
+        </div>
+        <!--Fin datos_formulario-->
 
     </div>
 </body>
